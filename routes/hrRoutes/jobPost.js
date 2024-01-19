@@ -18,17 +18,17 @@ const createJobPost = async (req, res) => {
             techSkill, // Include HR user ID in the request body
         } = req.body;
 
-        console.log(title,
-            company,
-            location,
-            description,
-            requirements,
-            workExp,
-            uploadJD,
-            ctcRange,
-            roleCategory, 
-            department,
-            techSkill)
+        // console.log(title,
+        //     company,
+        //     location,
+        //     description,
+        //     requirements,
+        //     workExp,
+        //     uploadJD,
+        //     ctcRange,
+        //     roleCategory, 
+        //     department,
+        //     techSkill)
 
         // Check for required fields
         if (!title || !company || !location) {

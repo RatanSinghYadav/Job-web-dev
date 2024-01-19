@@ -16,10 +16,11 @@ const corsOption = {
     allowedHeaders: ['Content-Type', 'Authorization', 'Set-Cookie', 'Token']
 }
 
-app.use(cors(corsOption));
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(cors(corsOption));
+app.use("/uploads", express.static("./uploads"));
 app.use(videoRouter)
 app.use(route)
 

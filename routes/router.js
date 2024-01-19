@@ -14,7 +14,7 @@ const getAllJobsForUser = require('./userRoutes/getAllJobs.js');
 const hrLogout = require('./hrRoutes/hrAuth/hrLogout.js');
 const getJobDetail = require('./userRoutes/jobDetail.js');
 const verifyHr = require('../controllers/verifyHr.js');
-const upload = require('./multer/multer.js');
+const upload = require('../middlewares/multer.middleware.js');
 
 
 //  verification route
@@ -24,7 +24,7 @@ route.post('/verifyhr', fetchUser, verifyHr);
 // user routes
 route.post('/api/v1/user/login', userLogin);
 route.post('/api/v1/user/signup', userSignup);
-route.post('/api/v1/user/profile', fetchUser, upload.fields([{ name: 'avatar', maxCount: 1 },{ name: 'video', maxCount: 1 },]), userProfile);
+route.post('/api/v1/user/profile', fetchUser, upload.fields([{ name: 'avatar'},{ name: 'video'}]), userProfile);
 route.get('/api/v1/user/getAllJobs', fetchUser, getAllJobsForUser);
 route.get('/api/v1/user/job/detail/:id', fetchUser, getJobDetail);
 

@@ -9,7 +9,7 @@ const userDetail = mongoose.Schema({
         phone: String,
     },
 
-    avatar: { type: String },
+    avatar: { type: mongoose.Schema.Types.Mixed },
 
     // Education Details
     educationMode: { type: String },
@@ -26,19 +26,19 @@ const userDetail = mongoose.Schema({
     experienceType: { type: String },
     company: { type: String },
     designation: { type: String },
-    department: { type: String },
     role: { type: String },
     workExpStartDate: { type: String },
     workExpEndDate: { type: String },
     currentCTC: { type: String },
     achievements: { type: String },
-    tools: { type: String },
+    tools: { type: Array },
     skills: { type: Array },
     workExpAddMore: { type: Array },
 
     // Certifications
     certificationName: { type: String },
-    date: { type: Date },
+    certificationStartDate: { type: String },
+    certificationEndDate: { type: String },
     certificationsAddMore: { type: Array },
 
     // Others
@@ -51,8 +51,14 @@ const userDetail = mongoose.Schema({
     otherInformation: { type: String },
 
     // video Resume
-    videoResume: { type: String },
+    video: { type: mongoose.Schema.Types.Mixed },
+
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'users'
+    }
 },
+
     {
         timestamps: true
     }
