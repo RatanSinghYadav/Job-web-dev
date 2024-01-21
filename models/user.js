@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
     },
     number: {
         type: String,
-        unique: true,
+        // unique: true,
         default: null,
     },
     password: {
@@ -28,14 +28,24 @@ const userSchema = new mongoose.Schema({
         required: true,
         default: null,
     },
+    currentLocation: {
+        type: String,
+        trim: true,
+        default: null,
+    },
     role: {
         type: String,
         enum: ['user', 'admin'],
         default: 'user',
     },
-    userDetail:{
+    avatar: { 
+        type: mongoose.Schema.Types.Mixed,
+        default:null
+     }
+    ,
+    userDetail: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'userDetail'
+        ref: 'userDetail',
     }
 },
     {

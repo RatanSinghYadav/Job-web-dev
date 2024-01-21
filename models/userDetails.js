@@ -7,9 +7,8 @@ const userDetail = mongoose.Schema({
         lname: String,
         email: String,
         phone: String,
+        currentLocation: String,
     },
-
-    avatar: { type: mongoose.Schema.Types.Mixed },
 
     // Education Details
     educationMode: { type: String },
@@ -25,6 +24,7 @@ const userDetail = mongoose.Schema({
     // Work Experience
     experienceType: { type: String },
     company: { type: String },
+    jobDescription: { type: String },
     designation: { type: String },
     role: { type: String },
     workExpStartDate: { type: String },
@@ -42,7 +42,7 @@ const userDetail = mongoose.Schema({
     certificationsAddMore: { type: Array },
 
     // Others
-    currentLocation: { type: String },
+    jobLocation: { type: String },
     willingToRelocate: { type: String },
     ownVehicle: { type: String },
     ownLaptop: { type: String },
